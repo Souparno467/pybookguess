@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap');
+
+body {
+    background: radial-gradient(circle, #1a2a3a, #0d131a);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #ffcc00;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ffcc00; }
+    to { text-shadow: 0 0 20px #ff6600; }
+}
+
+.hint {
+    font-size: 1.1rem;
+    color: #ffcc00;
+    font-style: italic;
+    margin: 15px 0;
+}
+
+.guess-input {
+    width: 80%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ffcc00;
+    background: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    outline: none;
+}
+
+.guess-input.correct {
+    border-color: lime;
+    animation: glowGreen 1.5s infinite alternate;
+}
+
+@keyframes glowGreen {
+    from { box-shadow: 0 0 10px lime; }
+    to { box-shadow: 0 0 20px green; }
+}
+
+.guess-input.incorrect {
+    border-color: red;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.message {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Bouncing Button Animation */
+button, .restart-btn {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+    transition: transform 0.2s ease-in-out;
+    font-weight: bold;
+}
+
+/* Submit Button */
+button {
+    background-color: #ff6600;
+    color: white;
+    animation: bounce 1.5s infinite;
+}
+
+button:hover {
+    background-color: #cc4400;
+}
+
+/* Restart Button */
+.restart-btn {
+    background-color: #b22222;
+    color: white;
+    text-decoration: none;
+    animation: bounce 1.5s infinite;
+}
+
+.restart-btn:hover {
+    background-color: #8b0000;
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
